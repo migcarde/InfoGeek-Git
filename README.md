@@ -11,8 +11,11 @@ InfoGeek pretende ser una aplicación que una empresas y profesionales de la inf
 La aplicación cuenta con 4 roles principales:
 
   -**Admin**: Es el administrador de la página web. Administra el catálogo de categorías y puede borrar banners inapropiados, además, cuenta con un panel de control con la información más relevante del sistema.
+  
   -**User**: Uno de los dos usuarios principales del sistema. Un usuario puede suscribirse a una oferta de empleo, que significa que esa oferta guardará el currículum de dicho usuario para que la empresa pueda verlo. Por otra parte, tiene la posibilidad de comentar novedades de su sector mediante posts y comentar posts de otros usuarios.
+  
   -**Enterprise**: Tienen la posibilidad de crear ofertas de trabajo para sus startups y elegir al mejor candidato de los que se suscriben a sus ofertas de empleo.
+  
   -**Sponsor**: Los sponsors pueden poner banners en la página, los cuales se muestran aleatoriamente.
 
 ## Requisitos necesarios
