@@ -1,0 +1,43 @@
+﻿@model InfoGeek.Models.CurriculumViewModels.CreateCurriculumViewModel
+
+@{
+    ViewData["Title"] = "Create curriculum";
+}
+
+<h2>Create curriculum</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titles" class="control-label"></label>
+                <input asp-for="Titles" class="form-control" />
+                <span asp-validation-for="Titles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Knowledges" class="control-label"></label>
+                <input asp-for="Knowledges" class="form-control" />
+                <span asp-validation-for="Knowledges" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

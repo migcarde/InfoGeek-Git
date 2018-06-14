@@ -1,0 +1,47 @@
+﻿@model InfoGeek.Models.Message
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Message</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Body)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ActorFrom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ActorFrom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ActorTo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ActorTo)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index", "Folder")
+</div>

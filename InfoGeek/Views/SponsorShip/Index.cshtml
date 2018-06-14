@@ -1,0 +1,53 @@
+﻿@model IEnumerable<InfoGeek.Models.SponsorShip>
+
+@{
+    ViewData["Title"] = "SponsorShips";
+    //var error = TempData["Error"] as string;
+}
+
+<h2>SponsorShips</h2>
+
+@if (User.IsInRole("SPONSOR"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+
+}
+
+<span class="text-danger">@TempData["Error"]</span>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Banner)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@Html.DisplayTextFor(modelItem => item.Banner)" alt="@Html.DisplayTextFor(modelItem => item.Banner)" height="200" width="200" />
+                </td>
+                <td>
+                    @if (User.IsInRole("SPONSOR"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id });
+                        @Html.Raw(" | ");
+                    }
+                    @if (User.IsInRole("SPONSOR") || User.IsInRole("ADMIN"))
+                    {
+                        @Html.ActionLink("Details", "Details", new { id = item.Id });
+                        @Html.Raw(" | ");
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id });
+
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

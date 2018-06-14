@@ -1,0 +1,100 @@
+﻿@model IEnumerable<InfoGeek.Models.ApplicationUser>
+@{
+    ViewData["Title"] = "Dashboard";
+    IEnumerable<string> enterprises = ViewData["job"] as IEnumerable<string>;
+}
+
+<h2>Dashboard</h2>
+<br />
+<h3>Database information</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <p>Average of object size</p>
+            </th>
+            <th>
+                <p>Data size</p>
+            </th>
+            <th>
+                <p>Total size</p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @ViewData["avgObjSize"]
+            </td>
+            <td>
+                @ViewData["dataSize"]
+            </td>
+            <td>
+                @ViewData["totalSize"]
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<h3>User's information</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <p>Average of subscriptions of users</p>
+            </th>
+            <th>
+                <p>Average of users that have curriculums</p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @ViewData["userSubscriptions"]
+            </td>
+            <td>
+                @ViewData["usersWithCurriculums"]
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<h3>Users that have at least 10% more posts that the average</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+@*<h3>Enterprises that have at least one job offer</h3>
+    <table class="table">
+        <thead>
+        </thead>
+        <tbody>
+            @foreach (var e in enterprises)
+            {
+                <tr>
+                    <td>
+                        @Html.Display(e)
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>*@

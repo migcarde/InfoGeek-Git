@@ -1,0 +1,58 @@
+﻿@model IEnumerable<InfoGeek.Models.Message>
+
+@{
+    ViewData["Title"] = "Messages";
+}
+
+<h2>Messages</h2>
+
+<p>
+    <a asp-action="Create">Create New Message</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Subject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Body)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeliveryDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ActorFrom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ActorTo)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActorFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActorTo)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { folderId = ViewContext.RouteData.Values["id"], messageId =item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { folderId = ViewContext.RouteData.Values["id"], messageId=item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<InfoGeek.Models.Folder>
+
+@{
+    ViewData["Title"] = "Folders";
+}
+
+<h2>Folders</h2>
+
+<p>
+    <a asp-action="Create">Create New Folder</a>
+</p>
+<p>
+    <a asp-action="Create" asp-controller="Message">Create New Message</a>
+</p>
+<span class="text-danger">@TempData["ErrorMessage"]</span>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Index", "Index", "Message", new { id = item.Id })
+                @if (item.Principal != true)
+                {
+                    @Html.Raw(" | ");
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                    @Html.Raw(" | ");
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+
+                }
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

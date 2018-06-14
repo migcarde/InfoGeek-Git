@@ -1,0 +1,58 @@
+﻿@model InfoGeek.Models.SponsorShipViewModels.SponsorShipViewModel
+
+@{
+    ViewData["Title"] = "Create sponsorship";
+}
+
+<h2>Create sponsorship</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Banner" class="control-label"></label>
+                <input asp-for="Banner" class="form-control" />
+                <span asp-validation-for="Banner" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HolderName" class="control-label"></label>
+                <input asp-for="HolderName" class="form-control" />
+                <span asp-validation-for="HolderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrandName" class="control-label"></label>
+                <input asp-for="BrandName" class="form-control" />
+                <span asp-validation-for="BrandName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number" class="control-label"></label>
+                <input asp-for="Number" class="form-control" />
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpirationMonth" class="control-label"></label>
+                <input asp-for="ExpirationMonth" class="form-control" />
+                <span asp-validation-for="ExpirationMonth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpirationYear" class="control-label"></label>
+                <input asp-for="ExpirationYear" class="form-control" />
+                <span asp-validation-for="ExpirationYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CvvCode" class="control-label"></label>
+                <input asp-for="CvvCode" class="form-control" />
+                <span asp-validation-for="CvvCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="MySponsorShips">Back to List</a>
+</div>
+

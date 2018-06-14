@@ -1,0 +1,55 @@
+﻿@model InfoGeek.Models.JobViewModels.JobViewModel
+
+@{
+    ViewData["Title"] = "Create offer";
+    IEnumerable<Category> categories = TempData["Categories"] as IEnumerable<Category>;
+}
+
+<h2>Create offer</h2>
+
+<h4>JobViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tags" class="control-label"></label>
+                <input asp-for="Tags" class="form-control" />
+                <span asp-validation-for="Tags" class="text-danger"></span>
+            </div>
+            @Html.DropDownListFor(model => model.Category, categories.Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name }), new { @class = "form-control" })
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Month"/> @Html.DisplayNameFor(model => model.Month)
+                    </label>
+                </div>
+            </div>
+            <!--Html.DropDownListFor(model => model.Category, new SelectList(TempData["Categories"])-->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="MyJobs">Back to List</a>
+</div>
+
